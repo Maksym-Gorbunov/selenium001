@@ -5,15 +5,35 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Test001 {
-    public static void main(String[] args) {
-        String projectPath = System.getProperty("user.dir");
+  static String browser;
+  static WebDriver driver;
+  public static void main(String[] args) {
+    setBrowser();
+    setBrowserConfig();
+    runTest();
+  }
 
-        System.setProperty("webdriver.gecko.driver", projectPath+"\\lib\\geckodriver\\geckodriver.exe");
-        System.setProperty("webdriver.chrome.driver", projectPath+"\\lib\\chromedriver\\chromedriver.exe");
-        WebDriver driverChrome = new ChromeDriver();
-        WebDriver driver = new FirefoxDriver();
-        driverChrome.get("http://maxcoder.pro");
-        driver.get("https://yandex.ru");
-//        driver.quit();
+  //set Browser
+  public static void setBrowser(){
+    browser = "Firefox";
+  }
+
+  //set Browser Config
+  public static void setBrowserConfig(){
+    String projectPath = System.getProperty("user.dir");
+    if(browser.contains("Firefox")){
+      System.setProperty("webdriver.gecko.driver", projectPath+"\\lib\\geckodriver\\geckodriver.exe");
+      driver = new FirefoxDriver();
     }
+    if(browser.contains("Chrome")){
+      System.setProperty("webdriver.chrome.driver", projectPath+"\\lib\\chromedriver\\chromedriver.exe");
+      driver = new ChromeDriver();
+    }
+  }
+
+  //run Test
+  public static void runTest(){
+    driver.get("https://www.seleniumhq.org/");
+    driver.quit();
+  }
 }
