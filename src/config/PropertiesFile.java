@@ -1,13 +1,22 @@
 package config;
 
+
+/**
+* This class has access to config.properties
+ * Read/Write
+* */
+
 import test001.SeleniumTest001;
 
 import java.io.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 public class PropertiesFile {
   static Properties prop = new Properties();
-  static String projectPath = System.getProperty("user.dir");
+  static String projectPath = "c:\\java\\selenium001";
+//  static String projectPath = System.getProperty("user.dir");
 
   public static void main(String[] args) {
     writePropertiesFile();

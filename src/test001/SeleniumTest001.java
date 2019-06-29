@@ -12,9 +12,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class SeleniumTest001 {
   public static String browser;
   static WebDriver driver;
+  static String projectPath = "c:\\java\\selenium001";
+//  static String projectPath = System.getProperty("user.dir");
 
   public static void main(String[] args) {
-    //setBrowser("Chrome");
+    System.out.println("selenium001...");
     PropertiesFile.readPropertiesFile();
     setBrowserConfig();
     runTest();
@@ -23,14 +25,8 @@ public class SeleniumTest001 {
     System.out.println(PropertiesFile.getPropertyValue("browser"));
   }
 
-  //set Browser
-  public static void setBrowser(String browserName){
-    browser = browserName;
-  }
-
   //set Browser Config
   public static void setBrowserConfig(){
-    String projectPath = System.getProperty("user.dir");
     if(browser.contains("Firefox")){
       System.setProperty("webdriver.gecko.driver", projectPath+"\\lib\\geckodriver\\geckodriver.exe");
       driver = new FirefoxDriver();
@@ -44,6 +40,6 @@ public class SeleniumTest001 {
   //run Test
   public static void runTest(){
     driver.get("https://www.seleniumhq.org/");
-    //driver.quit();
+    driver.quit();
   }
 }
