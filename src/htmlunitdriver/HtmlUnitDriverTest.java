@@ -3,7 +3,6 @@ package htmlunitdriver;
 import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.gargoylesoftware.htmlunit.WebClient;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-
 import java.lang.reflect.Field;
 
 public class HtmlUnitDriverTest {
@@ -13,10 +12,10 @@ public class HtmlUnitDriverTest {
     driver.get("https://www.seleniumhq.org/");
     System.out.println("Title: " + driver.getTitle());
 
-
     //WebClient
-    WebClient webClient = (WebClient) get(driver, "WebClient");
-
+    WebClient webClient = (WebClient) get(driver, "webClient");
+    System.out.println("Browser is Chrome : " + webClient.getBrowserVersion().isChrome());
+    System.out.println("Browser version : " + webClient.getBrowserVersion());
     driver.quit();
   }
 
