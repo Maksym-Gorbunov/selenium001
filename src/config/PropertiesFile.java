@@ -16,7 +16,7 @@ import java.util.Properties;
 public class PropertiesFile {
   static Properties prop = new Properties();
   static String projectPath = "c:\\java\\selenium001";
-//  static String projectPath = System.getProperty("user.dir");
+//  static String projectPath = Info.Info.getProperty("user.dir");
 
   public static void main(String[] args) {
     writePropertiesFile();

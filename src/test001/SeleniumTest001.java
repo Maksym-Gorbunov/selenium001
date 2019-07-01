@@ -13,7 +13,7 @@ public class SeleniumTest001 {
   public static String browser;
   static WebDriver driver;
   static String projectPath = "c:\\java\\selenium001";
-//  static String projectPath = System.getProperty("user.dir");
+//  static String projectPath = Info.Info.getProperty("user.dir");
 
   public static void main(String[] args) {
     System.out.println("selenium001...");
