@@ -4,6 +4,7 @@ package config;
 /**
 * This class has access to config.properties
  * Read/Write
+ * Settings
 * */
 
 import test001.SeleniumTest001;
