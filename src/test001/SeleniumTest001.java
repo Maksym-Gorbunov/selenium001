@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+//asldkfj
 public class SeleniumTest001 {
   public static String browser;
   static WebDriver driver;
@@ -25,7 +26,7 @@ public class SeleniumTest001 {
     System.out.println(PropertiesFile.getPropertyValue("browser"));
   }
 
-  //set Browser Config
+  //set Browser Config --
   public static void setBrowserConfig(){
     if(browser.contains("Firefox")){
       System.setProperty("webdriver.gecko.driver", projectPath+"\\lib\\geckodriver\\geckodriver.exe");

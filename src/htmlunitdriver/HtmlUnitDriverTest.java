@@ -6,6 +6,7 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import java.lang.reflect.Field;
 
 public class HtmlUnitDriverTest {
+
   public static void main(String[] args) throws Exception {
     //HtmlUnitDriver driver = new HtmlUnitDriver();
     HtmlUnitDriver driver = new HtmlUnitDriver(BrowserVersion.CHROME);
@@ -19,10 +20,15 @@ public class HtmlUnitDriverTest {
     driver.quit();
   }
 
+
   //Get browser version
   private static Object get(Object object, String field) throws Exception{
     Field f = object.getClass().getDeclaredField(field);
     f.setAccessible(true);
     return f.get(object);
+  }
+
+  public class A{
+    public String name = "max";
   }
 }
